@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Prueba</title>
+    <style>
+        /* Cambia el color del botón cuando el ratón está sobre él */
+body {
+  background-color: lime;
+}
+button:hover {
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <button id="boton-comando">Enviar Comando al Bot</button>
+
+    <script>
+        document.getElementById('boton-comando').addEventListener('click', () => {
+            fetch('http://localhost:8080/cmd', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ mensaje: '¡Hola desde la web!' }),
+            })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // Confirmación desde el servidor
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+

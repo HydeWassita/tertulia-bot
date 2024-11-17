@@ -7,7 +7,7 @@ const client = new Client({
     intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages]
 });
 //TOKEN.
-const TOKEN = 'MTI5MzMwMDU1OTc5Njg5NTgyNQ.GK98sK.VM6e6N-X28JnkYYVAWtahnugywbEQGSfOZLKOo';
+const TOKEN = '{Token acá}';
 // ID del canal. 
 const CHANNEL_ID = '1263245073915838487';
 //parsear Json.
